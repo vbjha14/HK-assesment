@@ -1,0 +1,12 @@
+<div class="progress" *ngIf="vehicleCapacityColorConfig">
+  <div class="progress-bar"
+    [ngClass]="getStyleClass()"
+    role="progressbar"
+    [style.width]="value+'%'"
+    [attr.aria-valuenow]="value"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    data-toggle="tooltip"
+    title="{{expectedTitle}}{{expectedTitleHours}}{{hour}} {{expectedTitleMinitues}}{{minute}} / {{calculatedTitle}}">{{value}}%
+  </div>
+</div>

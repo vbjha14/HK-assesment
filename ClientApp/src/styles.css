@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html, body {height: 100%; width: 100%; font-size: x-small; }
+
+.pac-container {
+  z-index: 1000000 !important;
+}
+
+.p-column-filter-overlay-menu{
+  z-index: 1000000 !important;
+}
+
+@media print {
+  .isPrinting > * { display: none; }
+  .isPrinting app-dispatch-print-document { display: block; }
+}

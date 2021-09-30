@@ -1,0 +1,50 @@
+<h1>Welcome</h1>
+<div class="card" >
+  <div style="margin-left: 500px;">
+    <p-tabView >
+      <p-tabPanel header="Log In">
+        <div class="text-center" style=" height:400px;width:250px;background-color:rgb(216, 234, 236);">
+          <form class="form-signin">
+            <label for="inputEmail" class="sr-only">Email/Mobile Number</label>
+            <input type="email"  placeholder="Email address" class="form-control" id="user_name" #userName value="admin" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" placeholder="Password" class="form-control" id="pwd" #pwd value="admin123" required>
+            <button pButton type="button" label="forgot password?" class="p-button-text p-button-plain"> </button>
+
+            <button class="btn btn-lg btn-primary btn-block" type="button" (click)="doLogin(userName.value,pwd.value)">Sign in</button>
+          </form>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Register" >
+        <ng-template pTemplate="content">
+          <form [formGroup]="form" >
+            <div class="p-fluid"  >
+              <div class="row" style=" height:400px;width:250px;background-color:rgb(216, 234, 236);">
+                <label style="margin-right: 175px;">Full Name</label>
+                <input id="fullName" type="text" pInputText formControlName="fullName">
+                <label style="margin-right: 175px;">Email</label>
+                <input id="email" type="text" pInputText formControlName="email">
+                <label style="margin-right: 175px;">Mobile Number</label>
+                <input id="mobileNumber" type="text" pInputText formControlName="mobileNumber">
+                <label style="margin-right: 175px;">Gender</label>
+                <input id="gender" type="text" pInputText formControlName="gender">
+                <label style="margin-right: 175px;">password</label>
+                <input id="password" type="text" pInputText formControlName="password">
+                <p-button>Register</p-button>
+                <label style="margin-top: 80px; margin-right: 75px;">already a member <a [routerLink]="['/login']">login</a></label>
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>
+<p-dialog header="Wrong Credentials" [(visible)]="message" [modal]="true" [style]="{width: '30vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="content">
+    <label style="color: red; font-size: medium;">{{message}}</label>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button (click)="message=false" label="Try again" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

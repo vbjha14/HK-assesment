@@ -1,0 +1,8 @@
+<input id="entity"  type="text" class="form-control"
+placeholder="Search Job..."
+[ngbTypeahead]="searchEntities"
+[inputFormatter]="formatter"
+[resultFormatter]="formatter"
+[editable]='false'
+[(ngModel)] = "entity"
+#inputRef />
